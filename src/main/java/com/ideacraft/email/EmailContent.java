@@ -2,13 +2,14 @@ package com.ideacraft.email;
 
 public class EmailContent {
 
-	private String title; 
+	private String title;
 	private String content;
 
 	/**
+	 * 전송메일 내용
 	 * 
-	 * @param title: 메일제목
-	 * @param content: 메일내용
+	 * @param title
+	 * @param content
 	 */
 	public EmailContent(String title, String content) {
 		this.title = title;

@@ -41,12 +41,12 @@ public class EmailService {
 		boolean result = false;
 
 		try {
-			// 보내는 사람 주소
+			// 발신인 정보
 			InternetAddress fromAddr = new InternetAddress();
 			fromAddr.setPersonal(senderInfo.getName(), senderInfo.getEncoding());
 			fromAddr.setAddress(senderInfo.getEmail());
 
-			// 받는사람 주소
+			// 수신인 정보
 			InternetAddress[] toAddr = new InternetAddress[recipientList.size()];
 			for (int i = 0; i < recipientList.size(); i++) {
 				toAddr[i] = new InternetAddress(recipientList.get(i));
