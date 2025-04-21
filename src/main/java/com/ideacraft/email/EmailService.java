@@ -18,15 +18,15 @@ public class EmailService {
 
 	private static final Logger logger = LogManager.getLogger();
 
-	private SenderInfo senderInfo;
+	private EmailSenderInfo emailSenderInfo;
 	private EmailServerConfig emailServerConfig;
 
 	/**
 	 * 
 	 * @param senderInfo: 보내는 사람 정보
 	 */
-	public EmailService(SenderInfo senderInfo, EmailServerConfig emailServerConfig) {
-		this.senderInfo = senderInfo;
+	public EmailService(EmailSenderInfo emailSenderInfo, EmailServerConfig emailServerConfig) {
+		this.emailSenderInfo = emailSenderInfo;
 		this.emailServerConfig = emailServerConfig;
 	}
 
@@ -43,8 +43,8 @@ public class EmailService {
 		try {
 			// 발신인 정보
 			InternetAddress fromAddr = new InternetAddress();
-			fromAddr.setPersonal(senderInfo.getName(), senderInfo.getEncoding());
-			fromAddr.setAddress(senderInfo.getEmail());
+			fromAddr.setPersonal(emailSenderInfo.getName(), emailSenderInfo.getEncoding());
+			fromAddr.setAddress(emailSenderInfo.getEmail());
 
 			// 수신인 정보
 			InternetAddress[] toAddr = new InternetAddress[recipientList.size()];

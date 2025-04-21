@@ -7,16 +7,6 @@ import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
-/**
- * 2025. 4. 21.
- * admin
- * AES256
- */
-/**
- * 2025. 4. 21.
- * admin
- * AES256
- */
 public class AES256 implements Crypto {
 	
     // 32바이트(256비트) 키

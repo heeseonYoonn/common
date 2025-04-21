@@ -21,7 +21,7 @@ public class EmailServerConfig extends Properties {
 		this.put("mail.smtp.host", host);
 		this.put("mail.smtp.port", port);
 		
-		//실제 사용 시 프로퍼티로 가져오기
+		//실제 사용 시 프로퍼티 이용
 		this.loginId = "wjtmxm7@gmail.com";
 		this.passwd = "mnftpkimimxvnvbf";
 	}
