@@ -10,7 +10,7 @@ import org.apache.logging.log4j.Logger;
 
 public class MailController {
 
-	private final Logger logger = LogManager.getLogger();
+    private static final Logger logger = LogManager.getLogger();
 
 	public String sendMail() {
 		System.out.println("SEND MAIL TEST");
