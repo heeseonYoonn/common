@@ -51,15 +51,15 @@ public class AES256 implements Crypto {
         return cipher;
     }
 
-    
+    @Override
     public String encrypt(String plainText) throws Exception {
         Cipher cipher = initCipher(Cipher.ENCRYPT_MODE);
         byte[] encrypted = cipher.doFinal(plainText.getBytes(StandardCharsets.UTF_8));
         return Base64.getEncoder().encodeToString(encrypted);
     }
 
-    
-    // 복호화
+
+    @Override
     public String decrypt(String encryptedText) throws Exception {
         Cipher cipher = initCipher(Cipher.DECRYPT_MODE);
         byte[] decodedBytes = Base64.getDecoder().decode(encryptedText);

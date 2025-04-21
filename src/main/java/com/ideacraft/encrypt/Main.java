@@ -5,7 +5,6 @@ public class Main {
 	public static void main (String[] args) {
 		CryptoCenter AES256Center = new CryptoCenter("AES256");
 		
-		
 		try {
 			
 			
