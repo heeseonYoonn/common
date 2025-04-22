@@ -11,7 +11,6 @@ public class Main {
 //		String text = "<script>alert('x');</script>";
 		String text = "hello,world";
 		
-		logger.info(StrUtil.getCharacterSet());		
 		logger.info(StrUtil.padLeft(text, 15, "0"));
 		logger.info(StrUtil.padRight(text, 15, "0"));
 		
