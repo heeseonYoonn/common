@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+    <Properties>
+       <Property name="LOG_PATTERN">%-5level >> %d{yyyy-MM-dd HH:mm:ss} [%t] %c{1}.%M >> %msg%n</Property>
+		<Property name="LOG_FILE_PATTERN">app-%d{yyyy-MM-dd}.log</Property>
+       <Property name="DIR">C:\logs</Property>
+       <Property name="FILE_NAME">app.log</Property>
+    </Properties>
+	
+
+
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${LOG_PATTERN}" />
+        </Console>
+
+
+        <RollingFile name="RollingFileLogger" fileName="${DIR}/${FILE_NAME}" filePattern="${DIR}/${LOG_FILE_PATTERN}">
+        	<PatternLayout pattern="${LOG_PATTERN}" />
+	        <Policies>
+	            <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+	        </Policies>
+    	</RollingFile>
+        
+        
+    </Appenders>
+
+    <Loggers>
+        <Logger name="com.ideacraft" level="debug" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="RollingFileLogger"/>
+        </Logger>
+
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="RollingFileLogger"/>
+        </Root>
+    </Loggers>
+</Configuration>

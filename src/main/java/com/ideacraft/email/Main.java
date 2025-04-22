@@ -14,9 +14,8 @@ public class Main {
 		try {
 			
 			//실제 사용시 하드코딩 된 부분은 .properties 파일 이용
-			//인프라세팅
-			EmailServerConfig googleSmtpConfig = new EmailServerConfig("smtp.gmail.com", "587");
 			EmailSenderInfo googleSenderInfo = new EmailSenderInfo("noreply", "noreply@gmail.com", "UTF-8");
+			EmailServerConfig googleSmtpConfig = new EmailServerConfig("smtp.gmail.com", "587");
 			EmailService emailService = new EmailService(googleSenderInfo, googleSmtpConfig);
 			EmailContent mailContent = new EmailContent("TestTitle", emailService.readHtmlAsString(""));
 
